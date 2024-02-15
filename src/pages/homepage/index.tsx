@@ -129,7 +129,7 @@ const HomePage = () => {
                   <Select
                     disabled={false} 
                     value={options.nationality} 
-                    className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                    className="h-10 bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                     onChange={(e) => handleOptions(e)} 
                     name="nationality" 
                     id="nationality">
@@ -167,7 +167,7 @@ const HomePage = () => {
                   <Select
                     disabled={false} 
                     value={options.age} 
-                    className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                    className="h-10 bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                     onChange={(e) => handleOptions(e)} 
                     name="age" 
                     id="age">
@@ -198,7 +198,7 @@ const HomePage = () => {
             <div className="h-24"></div>
             <div>
               <Explainer 
-                description="It returns users having the given age range, be careful, If you use<br/>min_age & max_age you can't use age." 
+                description="It returns users having the given age range, be careful.<br/>If you use min_age & max_age you can't use age." 
                 showDescription
                 showSelector
                 selector={
@@ -206,7 +206,7 @@ const HomePage = () => {
                     <Select
                       disabled={false} 
                       value={options.min_age} 
-                      className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                      className="h-10 bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                       onChange={(e) => handleOptions(e)} 
                       name="min_age" 
                       id="min_age">
@@ -218,7 +218,7 @@ const HomePage = () => {
                     <Select
                       disabled={false} 
                       value={options.max_age} 
-                      className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                      className="h-10 bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                       onChange={(e) => handleOptions(e)} 
                       name="max_age" 
                       id="max_age">
@@ -259,7 +259,7 @@ const HomePage = () => {
                   <Select
                     disabled={false} 
                     value={options.sex} 
-                    className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                    className="h-10 bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                     onChange={(e) => handleOptions(e)} 
                     name="sex" 
                     id="sex">

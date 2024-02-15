@@ -27,7 +27,7 @@ const Explainer: React.FC<ExplainerProps> = ( props ) => {
 
 	return(
 		<div>
-			<div className="justify-between flex">
+			<div className="items-center justify-between flex">
 				<div>
 					<h2 className="font-semibold font-[Raleway]">{props.title}</h2>
 					{props.showDescription ? (
