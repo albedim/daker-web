@@ -1,0 +1,9 @@
+.flex-block{
+    display: flex;
+}
+
+@media screen and (max-width: 720px) {
+    .flex-block{
+        display: block;
+    }
+}
