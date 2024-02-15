@@ -6,7 +6,10 @@ import CursorFollowDiv from "../../components/mouse";
 import UserComponent from "../../components/user";
 import { FiCopy, FiGithub } from "react-icons/fi";
 import { LuLink2 } from 'react-icons/lu'
+import 'react18-json-view/src/style.css'
 import { MdDone } from "react-icons/md";
+import JsonView from "react18-json-view";
+import Footer from "../../components/footer";
 
 const HomePage = () => {
 
@@ -61,7 +64,7 @@ const HomePage = () => {
   }
 
   return (
-    <div className="overflow-x-hidden h-screen w-screen">
+    <div className="h-screen w-screen">
       <div className="p-8 h-screen items-center justify-around flex">
         <div>
           <h1 className="font-bold font-[Raleway] text-4xl" >Daker, JSON fake users data<br />for prototype testing</h1>
@@ -190,6 +193,7 @@ const HomePage = () => {
               visualizeMode == 'json' ? (
                 <div className="justify-between flex p-3 bg-opacity-10 bg-[orange] rounded-md border">
                   <div>
+                    <JsonView enableClipboard={false} src={{ ...data, image: data.image.substring(0,34) + "..." }} />
                   </div>
                   <div>
                     {copied ? (
@@ -215,6 +219,7 @@ const HomePage = () => {
           </div>
         </div>
       </div>
+      <Footer/>
     </div>
   )
 }
