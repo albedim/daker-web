@@ -3,11 +3,11 @@ import { BASE_URL, getData, getNationalities } from "../../utils/api";
 import User, { UserSchema } from "../../interfaces/user";
 import Select from "../../components/input/select";
 import CursorFollowDiv from "../../components/mouse";
-import UserComponent from "../../components/user";
 import { FiCopy, FiGithub } from "react-icons/fi";
 import { LuLink2 } from 'react-icons/lu'
 import 'react18-json-view/src/style.css'
 import { MdDone } from "react-icons/md";
+import './index.css'
 import JsonView from "react18-json-view";
 import Footer from "../../components/footer";
 import Explainer from "../../components/Explainer";
@@ -64,7 +64,7 @@ const HomePage = () => {
         <div>
           <div style={{ maxWidth: 1024 }}>
             <div className="justify-around flex">
-              <div style={{ width: 540 }} className="flex p-4 bg-[white] rounded-md border">
+              <div className="w-js flex p-4 bg-[white] rounded-md border">
                 <JsonView className="text-sm" enableClipboard={false} src={{ ...data, image: data.image.substring(0,34) + "..." }} />
               </div>
             </div>
@@ -83,7 +83,7 @@ const HomePage = () => {
                   </button>
                 </a>
                 <a target="__blank" href={BASE_URL}>
-                  <button className="transition-all hover:bg-opacity-10 hover:bg-[gray]ml-2 pr-2 items-center p-1 text-[orange] rounded-md border flex">
+                  <button className="transition-all hover:bg-opacity-10 hover:bg-[gray] ml-2 pr-2 items-center p-1 text-[orange] rounded-md border flex">
                     <LuLink2 className="mr-2"/>
                     <p className="text-sm font-normal font-[Raleway]">API</p>
                   </button>

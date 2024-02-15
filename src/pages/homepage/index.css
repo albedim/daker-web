@@ -2,8 +2,15 @@
     display: flex;
 }
 
+.w-js{
+    width: 540px;
+}
+
 @media screen and (max-width: 720px) {
     .flex-block{
         display: block;
+    }
+    .w-js{
+        width: 389px !important;
     }
 }
