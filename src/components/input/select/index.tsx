@@ -13,12 +13,9 @@ interface SelectProps{
 const Select: React.FC<SelectProps> = (props) => {
     if (!props.disabled) {
         return (
-            <>
-                <p>{props.name.replace("_", " ").charAt(0).toUpperCase() + props.name.replace("_", " ").substring(1)}</p>
-                <select value={props.value} onChange={props.onChange} className={props.className} name={props.name} id={props.id}>
-                    {props.children}
-                </select>
-            </>
+            <select value={props.value} onChange={props.onChange} className={props.className} name={props.name} id={props.id}>
+                {props.children}
+            </select>
         )
     }
     return null;

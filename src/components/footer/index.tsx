@@ -4,7 +4,7 @@ import { AiFillLinkedin } from 'react-icons/ai'
 
 const Footer = () => {
   return(
-    <div className='pb-14 pl-64 mt-64 pr-64 flex justify-between'>
+    <div className='bg-[#fafafa] w-screen pb-14 pl-64 pt-64 pr-64 flex justify-between'>
       <h2 style={{ color: 'gray' }} className={'mt-2 text-1xl font-regular font-p'} >© 2023 - Made with ♥ by <span className='text-[orange]' >albedim</span></h2>
       <div className='justify-around flex'>
         <div className='p-4'><a target='_blank' href="https://twitter.com/TheAlbeDim"><BsTwitterX size={24} color='gray' /></a></div>
