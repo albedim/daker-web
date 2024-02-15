@@ -6,7 +6,6 @@ import CursorFollowDiv from "../../components/mouse";
 import UserComponent from "../../components/user";
 import { FiCopy, FiGithub } from "react-icons/fi";
 import { LuLink2 } from 'react-icons/lu'
-import ReactJson from "react-json-view";
 import { MdDone } from "react-icons/md";
 
 const HomePage = () => {
@@ -191,7 +190,6 @@ const HomePage = () => {
               visualizeMode == 'json' ? (
                 <div className="justify-between flex p-3 bg-opacity-10 bg-[orange] rounded-md border">
                   <div>
-                    <ReactJson enableClipboard={false} displayObjectSize={false} src={{...data, image: data.image.substring(0,40) + "..." }} />
                   </div>
                   <div>
                     {copied ? (
