@@ -15,7 +15,7 @@ import Explainer from "../../components/Explainer";
 const HomePage = () => {
 
   const [data, setData] = useState<User>(UserSchema);
-  const usersRef = useRef<any>()
+  const [isMobile, setIsMobile] = useState(window.screen.width < 720)
   const [nationalities, setNationalities] = useState<string[]>([])
   const [options, setOptions] = useState({
     sex: "",
@@ -67,7 +67,7 @@ const HomePage = () => {
     <>
       <div className="p-14 justify-around flex bg-[#fafafa] h-full w-screen">
         <div>
-          <div style={{ maxWidth: 1024 }}>
+          <div className="" style={{ maxWidth: isMobile ? 324 : 1024 }}>
             <div className="justify-around flex">
               <div className="w-js flex p-4 bg-[white] rounded-md border">
                 <JsonView className="text-sm" enableClipboard={false} src={{ ...data, image: data.image.substring(0,34) + "..." }} />
@@ -99,19 +99,29 @@ const HomePage = () => {
             <Explainer 
               description="This endpoint returns multiple results, 20 by default" 
               showDescription
-              value={ <a target="__blank" href={BASE_URL.replace("/one", "")} className="font-[Raleway]">{BASE_URL.replace("/one", "")}</a> } 
+              value={
+                <a
+                  target="__blank" 
+                  href={BASE_URL.replace("/one", "")} 
+                  className="font-[Raleway]">{isMobile ? "/users/one" : BASE_URL.replace("/one", "")}
+                </a> }
               title="Base API url"
             />
             <div className="h-24" ></div>
-            <Explainer 
+            <Explainer
               description="This endpoint just returns one result" 
               showDescription
-              value={ <a target="__blank" href={BASE_URL} className="ont-[Raleway]">{BASE_URL}</a> } 
+              value={ 
+                <a 
+                  target="__blank" 
+                  href={BASE_URL} 
+                  className="ont-[Raleway]">{isMobile ? "/users/one" : BASE_URL}
+                </a> } 
               title="Base API url"
             />
             <div className="h-24" ></div>
             <div>
-              <Explainer 
+              <Explainer
                 description="It returns users having the given nationality" 
                 showDescription
                 showSelector
@@ -119,7 +129,7 @@ const HomePage = () => {
                   <Select
                     disabled={false} 
                     value={options.nationality} 
-                    className="text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                    className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                     onChange={(e) => handleOptions(e)} 
                     name="nationality" 
                     id="nationality">
@@ -129,12 +139,12 @@ const HomePage = () => {
                     ))}
                   </Select>
                 }
-                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
+                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{isMobile ? "/users/one" + (finalUrl.includes("=") ? "?" + finalUrl.split("?")[1] : "") : finalUrl}</a> } 
                 title="Nationality filter"
               />
               <div className="h-8"></div>
               <Explainer
-                value={ 
+                value={
                   <JsonView 
                     className="text-sm" 
                     enableClipboard={false} 
@@ -157,7 +167,7 @@ const HomePage = () => {
                   <Select
                     disabled={false} 
                     value={options.age} 
-                    className="text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                    className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                     onChange={(e) => handleOptions(e)} 
                     name="age" 
                     id="age">
@@ -167,7 +177,7 @@ const HomePage = () => {
                     ))}
                   </Select>
                 }
-                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
+                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{isMobile ? "/users/one" + (finalUrl.includes("=") ? "?" + finalUrl.split("?")[1] : "") : finalUrl}</a> } 
                 title="Age filter"
               />
               <div className="h-8"></div>
@@ -196,7 +206,7 @@ const HomePage = () => {
                     <Select
                       disabled={false} 
                       value={options.min_age} 
-                      className="text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                      className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                       onChange={(e) => handleOptions(e)} 
                       name="min_age" 
                       id="min_age">
@@ -208,7 +218,7 @@ const HomePage = () => {
                     <Select
                       disabled={false} 
                       value={options.max_age} 
-                      className="text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                      className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                       onChange={(e) => handleOptions(e)} 
                       name="max_age" 
                       id="max_age">
@@ -219,7 +229,7 @@ const HomePage = () => {
                     </Select>
                   </div>
                 }
-                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
+                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{isMobile ? "/users/one" + (finalUrl.includes("=") ? "?" + finalUrl.split("?")[1] : "") : finalUrl}</a> } 
                 title="Age filter"
               />
               <div className="h-8"></div>
@@ -249,7 +259,7 @@ const HomePage = () => {
                   <Select
                     disabled={false} 
                     value={options.sex} 
-                    className="text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
+                    className="bg-[white] text-sm mb-2 rounded-md cursor-pointer border pr-4 pl-4 p-1" 
                     onChange={(e) => handleOptions(e)} 
                     name="sex" 
                     id="sex">
@@ -258,7 +268,7 @@ const HomePage = () => {
                     <option value="female">Female</option>
                   </Select>
                 }
-                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
+                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{isMobile ? "/users/one" + (finalUrl.includes("=") ? "?" + finalUrl.split("?")[1] : "") : finalUrl}</a> } 
                 title="Sex filter"
               />
               <div className="h-8"></div>
@@ -280,7 +290,7 @@ const HomePage = () => {
             <Explainer
               showDescription
               description="N is the number of results you are going to see, it is set to 20 by default<br/>and its max value is 50"
-              value={ <a target="__blank" href={BASE_URL.replace("/one", "?n=45")} className="font-[Raleway]">{BASE_URL.replace("/one", "?n=45")}</a> }
+              value={ <a target="__blank" href={BASE_URL.replace("/one", "?n=45")} className="font-[Raleway]">{isMobile ? "/users?n=45" : BASE_URL.replace("/one", "?n=45")}</a> }
               title={"Limit the results"}
             />
           </div>
