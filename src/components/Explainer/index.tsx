@@ -45,7 +45,7 @@ const Explainer: React.FC<ExplainerProps> = ( props ) => {
 						{copied ? (
 							<MdDone size={14}/>
 						):(
-							<button onClick={handleCopy}>
+							<button className="transition-all  hover:text-[orange]" onClick={handleCopy}>
 								<FiCopy size={14}/>
 							</button>
 						)}

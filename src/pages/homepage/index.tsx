@@ -54,8 +54,13 @@ const HomePage = () => {
     const newOptions: any = { ...options }
     newOptions[e.target.name] = e.target.value
     setOptions(newOptions)
-    setFinalUrl(BASE_URL + "?" + e.target.name + "=" + e.target.value)
-    assignData(BASE_URL + "?" + e.target.name + "=" + e.target.value)
+    if (e.target.value == "") {
+      setFinalUrl(BASE_URL)
+      assignData(BASE_URL)
+    } else {
+      setFinalUrl(BASE_URL + "?" + e.target.name + "=" + e.target.value)
+      assignData(BASE_URL + "?" + e.target.name + "=" + e.target.value)
+    }
   }
 
   return (
@@ -92,16 +97,16 @@ const HomePage = () => {
             </div>
             <div className="h-16"></div>
             <Explainer 
-              description="It just returns one result" 
+              description="This endpoint returns multiple results, 20 by default" 
               showDescription
-              value={ <a href={BASE_URL} className="ont-[Raleway]">{BASE_URL}</a> } 
+              value={ <a target="__blank" href={BASE_URL.replace("/one", "")} className="font-[Raleway]">{BASE_URL.replace("/one", "")}</a> } 
               title="Base API url"
             />
             <div className="h-24" ></div>
             <Explainer 
-              description="It returns multiple results, 20 by default" 
+              description="This endpoint just returns one result" 
               showDescription
-              value={ <a href={BASE_URL.replace("/one", "")} className="font-[Raleway]">{BASE_URL.replace("/one", "")}</a> } 
+              value={ <a target="__blank" href={BASE_URL} className="ont-[Raleway]">{BASE_URL}</a> } 
               title="Base API url"
             />
             <div className="h-24" ></div>
@@ -124,7 +129,7 @@ const HomePage = () => {
                     ))}
                   </Select>
                 }
-                value={ <a href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
+                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
                 title="Nationality filter"
               />
               <div className="h-8"></div>
@@ -162,7 +167,7 @@ const HomePage = () => {
                     ))}
                   </Select>
                 }
-                value={ <a href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
+                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
                 title="Age filter"
               />
               <div className="h-8"></div>
@@ -214,7 +219,7 @@ const HomePage = () => {
                     </Select>
                   </div>
                 }
-                value={ <a href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
+                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
                 title="Age filter"
               />
               <div className="h-8"></div>
@@ -253,7 +258,7 @@ const HomePage = () => {
                     <option value="female">Female</option>
                   </Select>
                 }
-                value={ <a href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
+                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{finalUrl}</a> } 
                 title="Sex filter"
               />
               <div className="h-8"></div>
@@ -275,7 +280,7 @@ const HomePage = () => {
             <Explainer
               showDescription
               description="N is the number of results you are going to see, it is set to 20 by default<br/>and its max value is 50"
-              value={ <a href={BASE_URL.replace("/one", "?n=45")} className="font-[Raleway]">{BASE_URL.replace("/one", "?n=45")}</a> }
+              value={ <a target="__blank" href={BASE_URL.replace("/one", "?n=45")} className="font-[Raleway]">{BASE_URL.replace("/one", "?n=45")}</a> }
               title={"Limit the results"}
             />
           </div>
