@@ -17,10 +17,11 @@ const Explainer: React.FC<ExplainerProps> = ( props ) => {
 
 	const handleCopy = () => {
 		setCopied(true)
+		console.log(props.value)
 		if (props.value.props.hasOwnProperty('src')) {
 			navigator.clipboard.writeText(JSON.stringify(props.value.props))
 		} else {
-			navigator.clipboard.writeText(props.value.props.children)
+			navigator.clipboard.writeText(props.value.props.title)
 		}
 		setTimeout(() => setCopied(false), 2400)
 	}
