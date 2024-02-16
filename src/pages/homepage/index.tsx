@@ -104,7 +104,7 @@ const HomePage = () => {
               description="This endpoint returns multiple results, 20 by default" 
               showDescription
               value={
-                <a title={BASE_URL.replace("/one", "")} target="__blank" href={finalUrl} className="font-[Raleway]">
+                <a title={BASE_URL.replace("/one", "")} target="__blank" href={BASE_URL.replace("/one", "")} className="font-[Raleway]">
                   <p>
                     <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
                     /users
@@ -118,7 +118,7 @@ const HomePage = () => {
               description="This endpoint just returns one result" 
               showDescription
               value={
-                <a title={BASE_URL} target="__blank" href={finalUrl} className="font-[Raleway]">
+                <a title={BASE_URL} target="__blank" href={BASE_URL} className="font-[Raleway]">
                   <p>
                     <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
                     /users/one
@@ -331,10 +331,10 @@ const HomePage = () => {
               showDescription
               description="N is the number of results you are going to see, it is set to 20 by default<br/>and its max value is 50"
               value={
-                <a title={finalUrl} target="__blank" href={finalUrl} className="font-[Raleway]">
+                <a title={BASE_URL.replace("/one", "?n=45")} target="__blank" href={BASE_URL.replace("/one", "?n=45")} className="font-[Raleway]">
                   <p>
                     <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
-                      /users/one
+                      /users
                     <span className="decoration-[orange] underline">?n=45</span>
                   </p>
                 </a>
