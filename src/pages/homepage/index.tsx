@@ -47,6 +47,9 @@ const HomePage = () => {
   const handleOptions = (e: any) => {
     if (e.target.name == 'max_age') {
       setOptions({ ...options, max_age: e.target.value })
+      if (finalUrl.includes("max_age")) {
+        setFinalUrl(finalUrl.split("&")[0])
+      }
       setFinalUrl(finalUrl + "&" + e.target.name + "=" + e.target.value)
       assignData(finalUrl + "&" + e.target.name + "=" + e.target.value)
       return
