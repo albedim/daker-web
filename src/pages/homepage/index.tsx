@@ -139,7 +139,23 @@ const HomePage = () => {
                     ))}
                   </Select>
                 }
-                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{isMobile ? "/users/one" + (finalUrl.includes("=") ? "?" + finalUrl.split("?")[1] : "") : finalUrl}</a> } 
+                value={
+                  <a target="__blank" href={finalUrl} className="font-[Raleway]">{
+                    isMobile ? (
+                      finalUrl.includes("=") ? (
+                        <p>/users/one?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
+                      ):(
+                        <p>/users/one</p>
+                      )
+                    ):(
+                      finalUrl.includes("=") ? (
+                        <p>{BASE_URL}?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
+                      ):(
+                        <p>{BASE_URL}</p>
+                      )
+                    )
+                  }</a>
+                }
                 title="Nationality filter"
               />
               <div className="h-8"></div>
@@ -177,7 +193,23 @@ const HomePage = () => {
                     ))}
                   </Select>
                 }
-                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{isMobile ? "/users/one" + (finalUrl.includes("=") ? "?" + finalUrl.split("?")[1] : "") : finalUrl}</a> } 
+                value={
+                  <a target="__blank" href={finalUrl} className="font-[Raleway]">{
+                    isMobile ? (
+                      finalUrl.includes("=") ? (
+                        <p>/users/one?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
+                      ):(
+                        <p>/users/one</p>
+                      )
+                    ):(
+                      finalUrl.includes("=") ? (
+                        <p>{BASE_URL}?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
+                      ):(
+                        <p>{BASE_URL}</p>
+                      )
+                    )
+                  }</a>
+                } 
                 title="Age filter"
               />
               <div className="h-8"></div>
@@ -229,7 +261,23 @@ const HomePage = () => {
                     </Select>
                   </div>
                 }
-                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{isMobile ? "/users/one" + (finalUrl.includes("=") ? "?" + finalUrl.split("?")[1] : "") : finalUrl}</a> } 
+                value={
+                  <a target="__blank" href={finalUrl} className="font-[Raleway]">{
+                    isMobile ? (
+                      finalUrl.includes("=") ? (
+                        <p>/users/one?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
+                      ):(
+                        <p>/users/one</p>
+                      )
+                    ):(
+                      finalUrl.includes("=") ? (
+                        <p>{BASE_URL}?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
+                      ):(
+                        <p>{BASE_URL}</p>
+                      )
+                    )
+                  }</a>
+                } 
                 title="Age filter"
               />
               <div className="h-8"></div>
@@ -268,7 +316,23 @@ const HomePage = () => {
                     <option value="female">Female</option>
                   </Select>
                 }
-                value={ <a target="__blank" href={finalUrl} className="font-[Raleway]">{isMobile ? "/users/one" + (finalUrl.includes("=") ? "?" + finalUrl.split("?")[1] : "") : finalUrl}</a> } 
+                value={
+                  <a target="__blank" href={finalUrl} className="font-[Raleway]">{
+                    isMobile ? (
+                      finalUrl.includes("=") ? (
+                        <p>/users/one?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
+                      ):(
+                        <p>/users/one</p>
+                      )
+                    ):(
+                      finalUrl.includes("=") ? (
+                        <p>{BASE_URL}?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
+                      ):(
+                        <p>{BASE_URL}</p>
+                      )
+                    )
+                  }</a>
+                } 
                 title="Sex filter"
               />
               <div className="h-8"></div>
@@ -290,7 +354,15 @@ const HomePage = () => {
             <Explainer
               showDescription
               description="N is the number of results you are going to see, it is set to 20 by default<br/>and its max value is 50"
-              value={ <a target="__blank" href={BASE_URL.replace("/one", "?n=45")} className="font-[Raleway]">{isMobile ? "/users?n=45" : BASE_URL.replace("/one", "?n=45")}</a> }
+              value={
+                <a target="__blank" href={BASE_URL.replace("/one", "?n=45")} className="font-[Raleway]">{
+                  isMobile ? (
+                    <p>/users<span className="decoration-[orange] underline">?n=45</span> </p>
+                  ):(
+                    <p>{BASE_URL.replace("/one", "")} <span className="decoration-[orange] underline">?n=45</span> </p>
+                  )
+                }</a>
+              }
               title={"Limit the results"}
             />
           </div>
