@@ -115,7 +115,7 @@ const HomePage = () => {
                 <a 
                   target="__blank" 
                   href={BASE_URL} 
-                  className="ont-[Raleway]">{isMobile ? "/users/one" : BASE_URL}
+                  className="font-[Raleway]">{isMobile ? "/users/one" : BASE_URL}
                 </a> } 
               title="Base API url"
             />
