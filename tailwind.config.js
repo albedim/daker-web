@@ -6,7 +6,8 @@ module.exports = {
   theme: {
     extend: {},
     fontFamily: {
-      Raleway: ['Raleway']
+      Raleway: ['Raleway'],
+      scode: ['Source Code Pro']
     }
   },
   plugins: [],

@@ -46,12 +46,13 @@ const HomePage = () => {
 
   const handleOptions = (e: any) => {
     if (e.target.name == 'max_age') {
-      setOptions({ ...options, max_age: e.target.value })
+      let newFinalUrl = finalUrl
       if (finalUrl.includes("max_age")) {
-        setFinalUrl(finalUrl.split("&")[0])
+        newFinalUrl = finalUrl.split("&")[0]
       }
-      setFinalUrl(finalUrl + "&" + e.target.name + "=" + e.target.value)
-      assignData(finalUrl + "&" + e.target.name + "=" + e.target.value)
+      setOptions({ ...options, max_age: e.target.value })
+      setFinalUrl(newFinalUrl + "&" + e.target.name + "=" + e.target.value)
+      assignData(newFinalUrl + "&" + e.target.name + "=" + e.target.value)
       return
     }
     const newOptions: any = { ...options }
@@ -103,23 +104,27 @@ const HomePage = () => {
               description="This endpoint returns multiple results, 20 by default" 
               showDescription
               value={
-                <a
-                  target="__blank" 
-                  href={BASE_URL.replace("/one", "")} 
-                  className="font-[Raleway]">{isMobile ? "/users/one" : BASE_URL.replace("/one", "")}
-                </a> }
+                <a title={BASE_URL.replace("/one", "")} target="__blank" href={finalUrl} className="font-[Raleway]">
+                  <p>
+                    <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
+                    /users
+                  </p>
+                </a>
+              }
               title="Base API url"
             />
             <div className="h-24" ></div>
             <Explainer
               description="This endpoint just returns one result" 
               showDescription
-              value={ 
-                <a 
-                  target="__blank" 
-                  href={BASE_URL} 
-                  className="font-[Raleway]">{isMobile ? "/users/one" : BASE_URL}
-                </a> } 
+              value={
+                <a title={BASE_URL} target="__blank" href={finalUrl} className="font-[Raleway]">
+                  <p>
+                    <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
+                    /users/one
+                  </p>
+                </a>
+              } 
               title="Base API url"
             />
             <div className="h-24" ></div>
@@ -143,21 +148,13 @@ const HomePage = () => {
                   </Select>
                 }
                 value={
-                  <a target="__blank" href={finalUrl} className="font-[Raleway]">{
-                    isMobile ? (
-                      finalUrl.includes("=") ? (
-                        <p>/users/one?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
-                      ):(
-                        <p>/users/one</p>
-                      )
-                    ):(
-                      finalUrl.includes("=") ? (
-                        <p>{BASE_URL}?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
-                      ):(
-                        <p>{BASE_URL}</p>
-                      )
-                    )
-                  }</a>
+                  <a title={finalUrl} target="__blank" href={finalUrl} className="font-[Raleway]">
+                    <p>
+                      <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
+                        /users/one
+                        {finalUrl.includes("=") ? <span className="decoration-[orange] underline">?{finalUrl.split("?")[1]}</span> : null}
+                    </p>
+                  </a>
                 }
                 title="Nationality filter"
               />
@@ -197,21 +194,13 @@ const HomePage = () => {
                   </Select>
                 }
                 value={
-                  <a target="__blank" href={finalUrl} className="font-[Raleway]">{
-                    isMobile ? (
-                      finalUrl.includes("=") ? (
-                        <p>/users/one?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
-                      ):(
-                        <p>/users/one</p>
-                      )
-                    ):(
-                      finalUrl.includes("=") ? (
-                        <p>{BASE_URL}?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
-                      ):(
-                        <p>{BASE_URL}</p>
-                      )
-                    )
-                  }</a>
+                  <a title={finalUrl} target="__blank" href={finalUrl} className="font-[Raleway]">
+                    <p>
+                      <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
+                        /users/one
+                        {finalUrl.includes("=") ? <span className="decoration-[orange] underline">?{finalUrl.split("?")[1]}</span> : null}
+                    </p>
+                  </a>
                 } 
                 title="Age filter"
               />
@@ -265,21 +254,13 @@ const HomePage = () => {
                   </div>
                 }
                 value={
-                  <a target="__blank" href={finalUrl} className="font-[Raleway]">{
-                    isMobile ? (
-                      finalUrl.includes("=") ? (
-                        <p>/users/one?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
-                      ):(
-                        <p>/users/one</p>
-                      )
-                    ):(
-                      finalUrl.includes("=") ? (
-                        <p>{BASE_URL}?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
-                      ):(
-                        <p>{BASE_URL}</p>
-                      )
-                    )
-                  }</a>
+                  <a title={finalUrl} target="__blank" href={finalUrl} className="font-[Raleway]">
+                    <p>
+                      <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
+                        /users/one
+                        {finalUrl.includes("=") ? <span className="decoration-[orange] underline">?{finalUrl.split("?")[1]}</span> : null}
+                    </p>
+                  </a>
                 } 
                 title="Age filter"
               />
@@ -320,21 +301,13 @@ const HomePage = () => {
                   </Select>
                 }
                 value={
-                  <a target="__blank" href={finalUrl} className="font-[Raleway]">{
-                    isMobile ? (
-                      finalUrl.includes("=") ? (
-                        <p>/users/one?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
-                      ):(
-                        <p>/users/one</p>
-                      )
-                    ):(
-                      finalUrl.includes("=") ? (
-                        <p>{BASE_URL}?<span className="decoration-[orange] underline">{finalUrl.split("?")[1]}</span></p>
-                      ):(
-                        <p>{BASE_URL}</p>
-                      )
-                    )
-                  }</a>
+                  <a title={finalUrl} target="__blank" href={finalUrl} className="font-[Raleway]">
+                    <p>
+                      <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
+                        /users/one
+                        {finalUrl.includes("=") ? <span className="decoration-[orange] underline">?{finalUrl.split("?")[1]}</span> : null}
+                    </p>
+                  </a>
                 } 
                 title="Sex filter"
               />
@@ -358,13 +331,13 @@ const HomePage = () => {
               showDescription
               description="N is the number of results you are going to see, it is set to 20 by default<br/>and its max value is 50"
               value={
-                <a target="__blank" href={BASE_URL.replace("/one", "?n=45")} className="font-[Raleway]">{
-                  isMobile ? (
-                    <p>/users<span className="decoration-[orange] underline">?n=45</span> </p>
-                  ):(
-                    <p>{BASE_URL.replace("/one", "")} <span className="decoration-[orange] underline">?n=45</span> </p>
-                  )
-                }</a>
+                <a title={finalUrl} target="__blank" href={finalUrl} className="font-[Raleway]">
+                  <p>
+                    <span style={{ fontFamily: 'Source Code Pro' }} className="font-bold">{"{...}"}</span>
+                      /users/one
+                    <span className="decoration-[orange] underline">?n=45</span>
+                  </p>
+                </a>
               }
               title={"Limit the results"}
             />
