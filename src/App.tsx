@@ -8,7 +8,7 @@ import Footer from './components/footer';
 
 function App() {
   return (
-    <BrowserRouter basename={"https://albedim.github.io/daker-web"}>
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={<><HomePage/></>}/>
       </Routes>
