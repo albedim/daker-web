@@ -80,7 +80,7 @@ const HomePage = () => {
             <div className="pt-8 text-center justify-around flex">
               <div className="">
                 <h1 className="text-2xl font-semibold font-[Raleway]">Daker API</h1>
-                <h2 className="text-sm font-normal font-[Raleway]">Fake user-data generator</h2>
+                <h2 className="text-sm font-normal font-[Raleway]">Users Faker (but realistic) REST API</h2>
               </div>
             </div>
             <div className="pt-4 justify-around flex">
